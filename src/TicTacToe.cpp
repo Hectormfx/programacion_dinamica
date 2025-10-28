@@ -1,4 +1,4 @@
-#Aqui se subira el codigo del gato
+//Aqui se subira el codigo del gato
 
 
 #include <iostream>
