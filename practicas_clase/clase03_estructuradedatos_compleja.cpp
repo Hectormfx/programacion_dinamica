@@ -11,7 +11,9 @@ struct Alumno{
 int main()
 {
 
-    const int TAM = 5;
+    int TAM = 1;
+    cout << "Ingrese el tamaño del arreglo" << endl;
+    cin >> TAM;
     Alumno grupo[TAM]; // Arreglo de una estructura definida por el usario
     cout << "===Captura los datos del alumno" << endl;
     for (int i = 0; i < TAM; i++){
