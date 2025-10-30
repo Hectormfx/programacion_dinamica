@@ -189,12 +189,7 @@ La inteligencia artificial sigue esta prioridad:
 **Problema**: La CPU siempre gana
 - **Solución**: Intenta tomar el centro primero y bloquea sus jugadas estratégicas
 
-## 👥 Créditos
 
-- **Proyecto**: Tic Tac Toe en C++
-- **Lenguaje**: C++
-- **Tipo**: Juego de consola interactivo
-- **Nivel**: Intermedio
 
 ## 📄 Notas del Desarrollador
 
@@ -203,7 +198,6 @@ Este programa demuestra:
 - ✅ Uso de estructuras de datos (vectores/matrices)
 - ✅ Estructuras de control (bucles y condicionales)
 - ✅ Validación robusta de entradas
-- ✅ Código limpio y bien documentado
 - ✅ Implementación de IA básica
 
 ---
