@@ -1,0 +1,211 @@
+# 📋 Documentación - Tic Tac Toe en C++
+
+## 📝 Descripción del Programa
+
+**Tic Tac Toe** es un juego clásico de tres en raya implementado en C++. El programa permite dos modos de juego: jugador contra jugador y jugador contra CPU. Incluye validación completa de entradas, detección de ganador y empate, y una interfaz de usuario amigable en consola.
+
+## ✨ Características Principales
+
+### Funcionalidades Básicas
+- ✅ Juego para dos jugadores (modo humano vs humano)
+- ✅ Detección automática de ganador
+- ✅ Detección de empate
+- ✅ Validación completa de entradas (previene jugadas inválidas)
+- ✅ Ejecución sin errores
+
+### Mejoras Implementadas
+- 🤖 **Modo vs CPU**: Juega contra una inteligencia artificial
+- 🔄 **Sistema de reinicio**: Opción para jugar múltiples partidas
+- 📋 **Menú interactivo**: Navegación fácil entre modos de juego
+- 🎯 **IA estratégica**: La CPU intenta ganar y bloquear al oponente
+
+## 🏗️ Estructura del Código
+
+### Módulos Principales
+
+#### 1. **Gestión del Tablero**
+```
+- inicializarTablero(): Prepara el tablero vacío
+- mostrarTablero(): Muestra el estado actual
+- esMovimientoValido(): Valida las jugadas
+- realizarMovimiento(): Ejecuta las jugadas
+```
+
+#### 2. **Lógica del Juego**
+```
+- verificarGanador(): Detecta victoria (filas, columnas, diagonales)
+- verificarEmpate(): Detecta tablero lleno sin ganador
+```
+
+#### 3. **Modos de Juego**
+```
+- jugarContraHumano(): Partida entre dos personas
+- jugarContraCPU(): Partida contra la computadora
+- movimientoCPU(): Estrategia de la IA
+```
+
+#### 4. **Interfaz de Usuario**
+```
+- mostrarMenu(): Presenta opciones principales
+- preguntarReinicio(): Permite jugar nuevamente
+```
+
+## 📖 Instrucciones de Uso
+
+### Compilación
+
+**Windows (MinGW/Visual Studio):**
+```bash
+g++ -o tictactoe tictactoe.cpp
+tictactoe.exe
+```
+
+**Linux/Mac:**
+```bash
+g++ -o tictactoe tictactoe.cpp
+./tictactoe
+```
+
+### Cómo Jugar
+
+#### 1. **Inicio del Programa**
+Al ejecutar el programa verás el menú principal:
+```
+--- MENU PRINCIPAL ---
+1. Jugar contra otro jugador
+2. Jugar contra la CPU
+3. Salir
+```
+
+#### 2. **Modo Jugador vs Jugador**
+- Selecciona la opción `1`
+- Los jugadores se turnan para colocar X y O
+- Ingresa las coordenadas cuando sea tu turno:
+  - **Fila**: número del 0 al 2
+  - **Columna**: número del 0 al 2
+
+**Ejemplo de tablero:**
+```
+     0   1   2
+   +---+---+---+
+ 0 | X |   |   |
+   +---+---+---+
+ 1 |   | O |   |
+   +---+---+---+
+ 2 |   |   | X |
+   +---+---+---+
+```
+
+#### 3. **Modo Jugador vs CPU**
+- Selecciona la opción `2`
+- Elige tu símbolo (X u O)
+- Si eliges X, juegas primero
+- La CPU hace su movimiento automáticamente
+
+#### 4. **Sistema de Coordenadas**
+Las posiciones del tablero se identifican así:
+```
+(0,0) | (0,1) | (0,2)
+------|-------|------
+(1,0) | (1,1) | (1,2)
+------|-------|------
+(2,0) | (2,1) | (2,2)
+```
+
+#### 5. **Finalización del Juego**
+- El juego termina cuando hay un ganador o empate
+- Puedes elegir jugar nuevamente o volver al menú
+
+## 🧠 Estrategia de la CPU
+
+La inteligencia artificial sigue esta prioridad:
+
+1. **Ganar**: Si puede completar tres en línea, lo hace
+2. **Bloquear**: Si el jugador puede ganar, lo bloquea
+3. **Centro**: Toma el centro si está disponible
+4. **Esquinas**: Prefiere las esquinas
+5. **Cualquier casilla**: Toma cualquier espacio libre
+
+## 🔍 Validaciones Implementadas
+
+- ❌ No permite coordenadas fuera de rango (0-2)
+- ❌ No permite jugar en casillas ocupadas
+- ❌ Valida entradas no numéricas
+- ❌ Valida opciones de menú inválidas
+
+## 💻 Requisitos Técnicos
+
+- **Compilador**: C++11 o superior
+- **Sistema Operativo**: Windows, Linux, o macOS
+- **Bibliotecas**: Estándar de C++ (iostream, vector, limits, cstdlib, ctime)
+
+## 🎯 Reglas del Juego
+
+1. El tablero es una cuadrícula de 3x3
+2. Los jugadores alternan turnos
+3. Gana quien logre tres símbolos consecutivos en:
+   - Una fila horizontal
+   - Una columna vertical
+   - Una diagonal
+4. Si se llena el tablero sin ganador, es empate
+
+## 📊 Ejemplos de Partida
+
+### Victoria en Fila
+```
+ X | X | X
+---+---+---
+ O | O |  
+---+---+---
+   |   |  
+```
+
+### Victoria en Diagonal
+```
+ X | O |  
+---+---+---
+ O | X |  
+---+---+---
+   |   | X
+```
+
+### Empate
+```
+ X | O | X
+---+---+---
+ X | X | O
+---+---+---
+ O | X | O
+```
+
+## 🐛 Solución de Problemas
+
+**Problema**: El programa no compila
+- **Solución**: Verifica que tu compilador soporte C++11 o superior
+
+**Problema**: Caracteres extraños en pantalla
+- **Solución**: Asegúrate de que tu terminal soporte UTF-8
+
+**Problema**: La CPU siempre gana
+- **Solución**: Intenta tomar el centro primero y bloquea sus jugadas estratégicas
+
+## 👥 Créditos
+
+- **Proyecto**: Tic Tac Toe en C++
+- **Lenguaje**: C++
+- **Tipo**: Juego de consola interactivo
+- **Nivel**: Intermedio
+
+## 📄 Notas del Desarrollador
+
+Este programa demuestra:
+- ✅ Programación modular con funciones
+- ✅ Uso de estructuras de datos (vectores/matrices)
+- ✅ Estructuras de control (bucles y condicionales)
+- ✅ Validación robusta de entradas
+- ✅ Código limpio y bien documentado
+- ✅ Implementación de IA básica
+
+---
+
+**¡Disfruta el juego y buena suerte! 🎮**
