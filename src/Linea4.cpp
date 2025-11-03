@@ -4,7 +4,7 @@
 #include <thread>   // sleep
 #include <chrono>   // milliseconds
 
-// =================== CONFIGURACIÓN ===================
+//  CONFIGURACIÓN 
 constexpr int FILAS = 6;
 constexpr int COLUMNAS = 7;
 constexpr char VACIO = '.';
@@ -17,7 +17,7 @@ int  MS_POR_FRAME = 300;          // tiempo entre “frames” de la caída (en 
 
 using Tablero = std::array<std::array<char, COLUMNAS>, FILAS>;
 
-// =================== PROTOTIPOS ===================
+// PROTOTIPOS 
 void clearScreen();
 void inicializarTablero(Tablero& t);
 void mostrarTablero(const Tablero& t);
@@ -33,7 +33,7 @@ bool verificarDiagonalDesc(const Tablero& t, char ficha);
 bool hayGanador(const Tablero& t, char ficha);
 bool preguntarJugarDeNuevo();
 
-// =================== IMPLEMENTACIÓN ===================
+// IMPLEMENTACIÓN 
 
 // Limpia pantalla con ANSI. Si tu consola no soporta, cambia por varios '\n'.
 void clearScreen() {
@@ -195,11 +195,11 @@ int main() {
         bool terminado = false;
 
         clearScreen();
-        std::cout << "======================================\n";
+        std::cout << "=\n";
         std::cout << "           CONECTA 4 (6x7)\n";
-        std::cout << "======================================\n";
+        std::cout << "\n";
         std::cout << "Jugador 1 = " << JUGADOR1 << "   |   Jugador 2 = " << JUGADOR2 << "\n";
-        std::cout << "======================================\n";
+        std::cout << "\n";
 
         while (!terminado) {
             mostrarTablero(tablero);
@@ -219,9 +219,9 @@ int main() {
             // ¿Ganó el jugador actual?
             if (hayGanador(tablero, ficha)) {
                 clearScreen();
-                std::cout << "======================================\n";
+                std::cout << "\n";
                 std::cout << "           CONECTA 4 (6x7)\n";
-                std::cout << "======================================\n";
+                std::cout << "\n";
                 mostrarTablero(tablero);
                 std::cout << "¡Jugador " << jugadorNum << " (" << ficha << ") gana! 🎉\n\n";
                 terminado = true;
@@ -229,9 +229,9 @@ int main() {
             // ¿Empate?
             else if (tableroLleno(tablero)) {
                 clearScreen();
-                std::cout << "======================================\n";
+                std::cout << "\n";
                 std::cout << "           CONECTA 4 (6x7)\n";
-                std::cout << "======================================\n";
+                std::cout << "\n";
                 mostrarTablero(tablero);
                 std::cout << "Empate. No hay mas movimientos.\n\n";
                 terminado = true;
